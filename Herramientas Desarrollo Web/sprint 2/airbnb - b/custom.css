@@ -1,0 +1,32 @@
+body {
+
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    float: none;
+    display: inline-block;
+}
+
+ul {
+	background-color: #e6e6e6;
+	padding: 10px;
+	margin: 10px;
+	}
+div {
+	height: auto;
+	width: 100%;
+	background-color: #f2f2f2;
+}
+header, footer, a, section {
+	background-color: #bdbdbd;
+	font-color: #df0101;
+	font-family: verdana;
+}
+form {
+	background-color: #f3f781;
+	font-family: italic;
+	font-color: #6a0888;
+}
+

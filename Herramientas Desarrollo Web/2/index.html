@@ -1,0 +1,102 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Semántica HTML5</title>
+</head>
+<body onLoad="drawPicture()">
+<header><!-- Cabecera de la página -->
+	<hgroup>
+    	<h1>Primera página en <mark>HTML5</mark></h1>
+    </hgroup>
+</header>
+<hr />
+<nav><!-- Barra de navegación -->
+<a href="/html">HTML</a> | 
+<a href="/css">CSS</a> |
+<a href="/js">Javascript</a> |
+<a href="/image">Imágenes</a> |
+</nav>
+<hr />
+<section>
+	<h2>Recursos HTML2</h2>
+	<article>
+    	<h3>Incorporando Audio en HTML5</h3>
+    	<audio controls="controls">
+        	<source src="audio/VictorPiano.mp3" type="audio/mp3" />
+            <source src="audio/VictorPiano.ogg" type="audio/ogg" />
+        </audio>
+    </article>
+    <article>
+    	<h3>Incorporando Video en HTML5</h3>
+        <video poster="image/oso.jpg" controls>
+        	<source src="video/movie.mp4" type="video/mp4" />
+            <source src="video/movie.webm" type="video/webm" />
+            <source src="video/movie.ogv" type="video/ogv" />
+        </video>
+    </article>
+    <article>
+    	<h3>Incorporando Video desde Youtube</h3>
+        <iframe src="https://www.youtube.com/embed/V60WxHMzARQ" allowfullscreen ></iframe>
+    </article>
+    <article>
+    	<h3>Incorporando Canvas en HTML5</h3>
+        <canvas width="320" height="240" id="figuras">
+        	Tu navegador no soporta canvas
+        </canvas>
+        <canvas width="320" height="240" id="sombras">
+        	Tu navegador no soporta canvas
+        </canvas>
+    </article>
+    <article>
+    	<h3>Utilización de details - summary</h3>
+        <details>
+        	<summary>Navegadores que soportan HTML</summary>
+            <ul>
+            	<li>Chrome</li>
+                <li>Firefox</li>
+                <li>Opera</li>
+                <li>Internet Explorer</li>
+                <li>Safari</li>
+            </ul>
+        </details>
+    </article>
+    <article>
+    	<h3>Utilización de figure</h3>
+        Este es el osito del video	
+        <figure>
+        	<img src="image/oso.jpg" alt="Osito" width="259" />
+        </figure>
+        Está dentro de una etiqueta "figure".
+     </article>   
+</section>
+<aside><!-- Semánticamente define el contenido de la barra lateral -->
+	<h4><a href="#">Visita nuestro Facebook</a></h4>
+    <h4><a href="#">Síguenos en Twitter</a></h4>
+</aside>
+<footer><h6>Desarrollado por el Alumno incógnito.  Todos los derechos reservados &reg;</h6>
+</footer>
+<script src="js/canvas.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

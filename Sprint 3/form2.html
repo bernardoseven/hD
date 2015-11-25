@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/bootstrap.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery-1.11.2.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+	<script src="js/menu.js"></script>
+    <script src="js/jquery-1.11.3.min.js"></script>
+        <script src="js/funciones.js"></script>
+        <script src="js/validCampoFranz.js"></script>
+        <script src="js/jquery.Rut.js"></script>
+        <script type="text/javascript">
+            $(function(){
+                //Para escribir solo letras
+                $('#name').validCampoFranz(' abcdefghijklmnñopqrstuvwxyzáéiou');
+				$('#ape').validCampoFranz(' abcdefghijklmnñopqrstuvwxyzáéiou');
+				$('#namep').validCampoFranz(' abcdefghijklmnñopqrstuvwxyzáéiou');
+				$('#apep').validCampoFranz(' abcdefghijklmnñopqrstuvwxyzáéiou');
+				$('#namef').validCampoFranz(' abcdefghijklmnñopqrstuvwxyzáéiou');
+				$('#apef').validCampoFranz(' abcdefghijklmnñopqrstuvwxyzáéiou');
+
+                //Para escribir solo numeros    
+                $('#pesos').validCampoFranz('0123456789');  
+				$('#fonor').validCampoFranz('+0123456789'); 
+				$('#smsr').validCampoFranz('+0123456789'); 
+				$('#smspp').validCampoFranz('+0123456789');
+				$('#fornopp').validCampoFranz('+0123456789');
+				$('#rut').validCampoFranz('0123456789');
+				$('#fonop').validCampoFranz('+0123456789');  
+				$('#rutp').validCampoFranz('0123456789');
+				$('#rutf').validCampoFranz('0123456789');
+            });
+        </script>
+        <script type="text/javascript">
+function mostrar(id) {
+    if (id == "reclamo") {
+        $("#escoja").hide();
+        $("#reclamo").show();
+        $("#pregunta").hide();
+        $("#felicitaciones").hide();
+    }
+
+    if (id == "pregunta") {
+        $("#escoja").hide();
+        $("#reclamo").hide();
+        $("#pregunta").show();
+        $("#felicitaciones").hide();
+    }
+
+    if (id == "felicitaciones") {
+        $("#escoja").hide();
+        $("#reclamo").hide();
+        $("#pregunta").hide();
+        $("#felicitaciones").show();
+    }
+}
+</script>
+<script type="text/javascript">
+      $(document).ready(function(){
+$('#rut').Rut({
+  on_error: function(){ alert('Rut incorrecto'); },
+  format_on: 'keyup'
+});
+$('#rutp').Rut({
+  on_error: function(){ alert('Rut incorrecto'); },
+  format_on: 'keyup'
+});
+$('#rutf').Rut({
+  on_error: function(){ alert('Rut incorrecto'); },
+  format_on: 'keyup'
+});
+$("#content > ul").tabs();
+});    
+</script>
+  </head>
+
+  <body>
+    <header>
+    <div class="nav">
+      <div class="container">
+        <ul class="pull-left">
+          <li><a href="#">Nombre</a></li>
+          <li><a href="descubre.html">Descubre</a></li>
+        </ul>
+        <ul class="pull-right">
+          <li><a href="#">Regístrate</a></li>
+          <li><a href="#">Logueáte</a></li>
+          <li><a href="ayuda.html">Ayuda</a></li>
+        </ul>
+      </div>
+    </div>
+    </header>
+    <h1><strong><em>Formulario de Contacto
+</em></strong></h1>
+<form action="contacto.html" method="post">
+    Estado actual: 
+    <select id="status" name="status" onChange="mostrar(this.value);">
+        <option value="Escoja Una opcion">Escoja una opción</option>
+        <option value="reclamo">Reclamo</option>
+        <option value="pregunta">Pregunta</option>
+        <option value="felicitaciones">Felicitaciones</option>
+     </select>    		
+                <div id="req-field-desc">Los campos con 
+                <span class="requerido">*</span> son obligatorios</div>
+			</form>
+            <div id="reclamo" style="display: none;">
+    <h2>Por favor llene el formulario de reclamo</h2>
+    <form role="form" action="validacion.html" method="post">
+	  <label for="rut">Rut: (*)</label>&nbsp;<input type="text" id="rut" name="rut" class="rut" />
+        	<div><label>Tu Nombre: (*)</label><input type="text" class="nombre" value="" id="name" /></div>
+            <div><label>Tu Apellido: (*)</label><input type="text" class="ape" value="" id="ape" /></div>
+            <div><label>Medio Contacto: (*)</label> 
+    <select name="status" onChange="ver(this.value);">
+        <option value="Escoja Una opcion">Escoja una opción</option>
+        <option value="email">Email</option>
+        <option value="sms">SMS</option>
+        <option value="fono">Telefono</option></select></div>
+        <div id="email" style="display: none;">
+            <div><label>Tu Email: (*)</label><input type="text" class="email" value="" /></div>
+      </div>
+            <div id="sms" style="display: none;">
+            <div><label>SMS: (*)</label><input type="text" class="smsr" value="" id="smsr" /></div>
+            </div>
+            <div id="fono" style="display: none;">
+            <div><label>Telefono: (*)</label><input type="text" class="fonor" value="" id="fonor" /></div>
+            </div>
+            <div><label>Motivo Reclamo: (*)</label><input type="text" class="motivo" value="" /></div>
+            <div><label>Monto objetado: (*)</label><input type="text" class="monto" value="" id="pesos" /></div>
+            <div><label>Mensaje: (*)</label><textarea rows="6" class="mensaje" ></textarea></div>
+            <div><input type="submit" value="Envia Mensaje" class="boton"></div>
+        </form>
+</div>
+	<div id="pregunta" style="display: none;">
+    <h2>Por favor llene el formulario de pregunta</h2>
+    <form role="form" action="validacion.html" method="post">
+	  <label for="rut">Rut: (*)</label><input type="text" id="rutp" name="rutp" class="rutp" />
+        	<div><label>Tu Nombre: (*)</label><input type="text" class="nombrep" value="" id="nombrep" /></div>
+      <div><label>Tu Apellido: (*)</label><input type="text" class="apep" value="" id="apep" /></div>
+            <div><label>Medio Contacto: (*)</label> 
+    <select name="status" onChange="verp(this.value);">
+        <option value="Escoja Una opcion">Escoja una opción</option>
+        <option value="emailp">Email</option>
+        <option value="smsp">SMS</option>
+        <option value="fonop">Telefono</option></select></div>
+        <div id="emailp" style="display: none;">
+            <div><label>Tu Email: (*)</label><input type="text" class="email" value="" /></div>
+            </div>
+          <div id="smsp" style="display: none;">
+            <div><label>SMS: (*)</label><input type="text" class="smspp" value="" id="smspp" /></div>
+            </div>
+            <div id="fonop" style="display: none;">
+            <div><label>Telefono: (*)</label><input type="text" class="fonopp" value="" id="fonopp" /></div>
+            </div>
+      <div><label>Mensaje: (*)</label><textarea rows="6" class="mensajep" ></textarea></div>
+            <div><input type="submit" value="Envia Mensaje" class="botonp"></div>
+      </form>
+</div>
+	<div id="felicitaciones" style="display: none;">
+    <h2>Por favor llene el formulario de felicitaciones</h2>
+    <form role="form" action="validacion.html" method="post">
+	  <label for="rut">Rut: (*)</label>&nbsp;<input type="text" id="rutf" name="rutf" class="rutf" />
+      <div><label>Tu Nombre: (*)</label><input type="text" class="nombref" value="" id="namef" /></div>
+      <div><label>Tu Apellido: (*)</label><input type="text" class="apef" value="" id="apef" /></div>
+      <div><label>Mensaje: (*)</label><textarea rows="6" class="mensajef" ></textarea></div>
+            <div><input type="submit" value="Envia Mensaje" class="botonf"></div>
+      </form>
+</div>
+<!--
+<form action="" method="get" autocomplete="off" 
+novalidate="novalidate" oninput="rangoOut.value=(rango.valueAsNumber)" >
+<fieldset><legend>Datos del Usuario</legend>
+    <p>
+  <label for="textfield2">Nombres: </label>
+   <input type="url" name="textfield2" id="textfield2"
+   tabindex="20"  >
+   </p>
+     <p>
+  <label for="textfield2">Apellidos: </label>
+   <input type="url" name="textfield2" id="textfield2"
+   tabindex="20" />
+   </p>
+   <p>
+   <p>
+  <p>
+    <label for="textfield">Correo electrónico: </label>
+    <input type="email" name="textfield" id="textfield"
+    tabindex="10" required autofocus> *
+  </p>
+  <p>
+  <label for="textfield2">Sitio Web: </label>
+   <input type="url" name="textfield2" id="textfield2"
+   tabindex="20"  >
+   </p>
+   <p>
+     <label for="textfield3">Rut</label>
+     <input type="number" name="textfield3" id="textfield3" tabindex="30" min="0" max="130" step="5">
+   </p>
+   <p>
+     <label for="textfield3">Edad</label>
+     <input type="number" name="textfield3" id="textfield3" tabindex="30" min="0" max="130" step="5">
+   </p>
+  </fieldset>
+  <fieldset><legend>Fechas</legend>
+   <p>
+     <label for="text6">Fecha Nacimiento</label>
+     <input type="datetime-local" name="fecha2" id="text6" tabindex="60" />
+   </p>
+   <p>
+     <label for="text7">Mes</label>
+     <input type="month" name="mes" id="text7" tabindex="70" />
+   </p>
+   <p>
+     <label for="text8">Semana</label>
+     <input type="week" name="semana" id="text8" tabindex="80" />
+     </p>
+     <p>
+     <label for="text9">Hora</label>
+     <input type="time" name="hora" id="text9" tabindex="90" />
+    </p>
+  </fieldset>
+  <input name="btnEnviar" type="submit" value="Enviar"
+  tabindex="">
+</form>
+-->
+<footer>
+    <section>
+    <p>Desarrolladores: Bernardo Rodriguez y Martin Ruiz</p>
+    <p>Dirección: Sanhattan Email: agencia@somossecos.cl Telefono: 95467899</p>
+  </section>
+</footer>
+   <script type="text/javascript" src="js/script.js"></script>
+
+  </body>
+</html>
